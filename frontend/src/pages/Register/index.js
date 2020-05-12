@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import './styles.css';
 import Logo from '../../assets/logo.svg';
+import InputMask from 'react-input-mask';
 
 export default function Register() {
     const [name, setName] = useState('');
@@ -28,11 +29,11 @@ export default function Register() {
         try {
             const res = await Api.post('ongs', data);
             alert(`seu ID de acesso ${res.data.id}`);
-
             history.push('/');
             
         } catch (err) {
             alert('Erro no cadastro tente novamente')
+        
         }
     }
 
@@ -42,7 +43,7 @@ export default function Register() {
                 <section>
                     <img src={Logo} alt="Be The Hero" />
 
-                    <h1>Cadastro</h1>
+                    <h1>Ajude o mundo!</h1>
                     <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem os casos da sua ONG.</p>
 
                     <Link className="back-link" to="/">
@@ -51,33 +52,34 @@ export default function Register() {
                     </Link>
                 </section>
                 <form onSubmit={HandleRegister}>
-                    <input
+                    <InputMask
                         placeholder="Nome da ONG"
                         value={name}
                         onChange={e => setName(e.target.value)}
                     />
                    
-                    <input
+                    <InputMask
                         type="email"
                         placeholder="E-mail"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
-                    <input
+                    <InputMask
                         placeholder="Telefone"
                         value={whatsapp}
                         onChange={e => setWhatsapp(e.target.value)}
+                        mask="(99)99999-9999"
                     />
-
                     <div className="input-group">
-                        <input
+                        <InputMask
                             placeholder="Cidade"
                             value={city}
                             onChange={e => setCity(e.target.value)}
                         />
-                        <input
+                        <InputMask
                             placeholder="UF"
                             style={{ width: 80 }}
+                            type='text'
                             value={uf}
                             onChange={e => setUf(e.target.value)}
                         />
