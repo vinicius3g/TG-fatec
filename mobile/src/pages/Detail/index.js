@@ -35,7 +35,7 @@ export default function Detail() {
                 <Image source={logoImg} />
 
                 <TouchableOpacity onPress={navigateBack}>
-                    <Feather name="arrow-left" size={28} color="#E82041" />
+                    <Feather name="arrow-left" size={28} color="#00cc66" />
                 </TouchableOpacity>
             </View>
 

@@ -54,7 +54,7 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
     },
     action: {
-        backgroundColor: '#e02141',
+        backgroundColor: '#00cc66',
         borderRadius: 8,
         height: 50,
         width: '48%',
