@@ -4,7 +4,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import './styles.css';
 import Logo from '../../assets/logo.svg';
-import InputMask from 'react-input-mask';
 
 export default function Register() {
     const [name, setName] = useState('');
