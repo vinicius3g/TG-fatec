@@ -5,6 +5,8 @@ exports.up = function (knex) {
         table.string('title').notNullable();
         table.string('description').notNullable();
         table.decimal('value').notNullable();
+        table.dateTime('creation_date').notNullable().defaultTo(knex.fn.now());
+        table.date('date').notNullable();
 
         table.string('ong_id').notNullable();
 
